@@ -54,10 +54,10 @@ internet_act <- col_frame %>%
 # TAREA 3: Promedio de uso de internet por municipio y actividad (solo donde la actividad esta presente)
 # ---------------------
 
-internet_act_munic <- col_frame %>%
+internet_act_munic <- col_frame %>% 
   filter(total == 1) %>%  # Filtramos solo las filas donde la actividad está presente (valor 1)
   group_by(Munic_Dept, Municipio, actG, Actividad) %>%  # Agrupamos por municipio y tipo de actividad
-  summarise(internet = percent(mean(uso_internet, na.rm = TRUE), accuracy = 0.1)) %>%  # Calculamos el promedio de uso de internet
+  summarise(internet = round(mean(uso_internet, na.rm = TRUE) * 100, 0)) %>%  # Calculamos el promedio de uso de internet y lo redondeamos a entero
   rename(divipola = Munic_Dept) %>%  # Renombramos la columna del departamento
   arrange(Municipio, actG)  # Ordenamos por municipio y tipo de actividad
 
