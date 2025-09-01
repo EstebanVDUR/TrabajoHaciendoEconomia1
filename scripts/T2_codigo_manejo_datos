@@ -3,11 +3,12 @@ library(dplyr)
 library(tidyr)
 library(scales)
 library(readxl)
+library(haven)
 
 #Paths datasets utilizados
 
-TenderosFU03_Publica <- read_dta("D:/universidad/2 semestre/haciendo economía/TenderosFU03_Publica.dta")
-TerriData_Dim2_Sub3 <- read_excel("D:/universidad/2 semestre/haciendo economía/TerriData_Dim2_Sub3.xlsx")
+TenderosFU03_Publica <- read_dta("D:/universidad/2 semestre/haciendo economía/corte 1/TenderosFU03_Publica.dta")
+TerriData_Dim2_Sub3 <- read_excel("D:/universidad/2 semestre/haciendo economía/corte 1/TerriData_Dim2_Sub3.xlsx")
 
 #Elimina las etiquetas y deja los valores subyacentes como numéricos
 TenderosFU03_Publica <- TenderosFU03_Publica %>%
